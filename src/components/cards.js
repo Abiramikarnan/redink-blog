@@ -1,4 +1,5 @@
 import React  from 'react';
+import '../cards.css'
 import { Card, CardText, CardBody,CardTitle, CardSubtitle} from 'reactstrap';
 class Cards extends React.Component{
     constructor(props){
@@ -10,7 +11,7 @@ class Cards extends React.Component{
             
             <div>
                 <br/>
-             <Card variant ="outlined">
+             <Card className = "card"  variant ="outlined">
             
                 <CardBody>
                     <CardTitle><h1>{this.props.post.title}</h1></CardTitle>
