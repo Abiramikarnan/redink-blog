@@ -1,5 +1,4 @@
 import React from 'react';
-import {Row,Col, Button} from 'reactstrap';
 import logo from './logo.svg';
 import Home from './components/Home.js';
 import Author from './components/Authors.js'

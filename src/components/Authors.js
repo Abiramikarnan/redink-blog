@@ -1,9 +1,7 @@
 import React ,{Component} from 'react';
-import { Card, CardLink, CardBody,CardTitle,CardText} from 'reactstrap';
+import { Card, CardLink, CardBody,CardTitle} from 'reactstrap';
 import {Row,Col,Container} from 'reactstrap';
-import { USERS } from '../shared/users';
 import Header from './Header.js'
-
 import '../login.css'
 
 class Author extends Component{

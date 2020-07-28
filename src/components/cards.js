@@ -1,6 +1,5 @@
 import React  from 'react';
 import '../cards.css'
-import {Link} from 'react-router-dom';
 import {Row,Col, Card, CardText, CardBody,CardTitle, CardSubtitle,CardLink ,
     Modal,ModalHeader,ModalBody,ModalFooter,Label,Form,FormGroup,Input,Button} from 'reactstrap';
 class Cards extends React.Component{

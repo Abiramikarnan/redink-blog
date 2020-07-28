@@ -3,7 +3,6 @@ import {Row,Col, Button,Modal,ModalHeader,ModalBody,ModalFooter,Label,Form,FormG
 import Cards from './cards';
 import '../Home.css'
 import { Container } from 'react-bootstrap';
-import { POSTS } from '../shared/posts.js';
 import Header from './Header.js'
 
 class Home extends React.Component{
