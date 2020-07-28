@@ -1,9 +1,12 @@
-import React from 'react';
+import React,{Component} from 'react';
 import Header from './Header.js'
 import {Row,Col} from 'reactstrap'
+import { COMMENTS } from '../shared/comments.js';
 
 function Comments() {
-    return (
+   
+    
+        return (
       <div >
           <Header/>
           <br/>
@@ -14,6 +17,7 @@ function Comments() {
             </Row>
                </div>
     );
-  }
+        }
+  
   
   export default Comments;

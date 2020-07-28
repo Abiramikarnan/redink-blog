@@ -1,6 +1,7 @@
 import React  from 'react';
 import '../cards.css'
-import { Card, CardText, CardBody,CardTitle, CardSubtitle,CardLink ,
+import {Link} from 'react-router-dom';
+import {Row,Col, Card, CardText, CardBody,CardTitle, CardSubtitle,CardLink ,
     Modal,ModalHeader,ModalBody,ModalFooter,Label,Form,FormGroup,Input,Button} from 'reactstrap';
 class Cards extends React.Component{
     constructor(props){
@@ -29,13 +30,23 @@ class Cards extends React.Component{
              <Card className = "card"  variant ="outlined">
             
                 <CardBody>
+                    
                 <CardText>
-                <h5><a href ="#"  style={{textDecoration:'none',color:'primary'}}  className ="link" >Delete</a></h5>
-                <h5><a href ="#"  style={{textDecoration:'none',color:'primary'}} className ="link" md={1} onClick = {this.togglemodal.bind(this)}>Edit</a></h5>
+                <Row className = "offset-md-10" md={1}>
+                <h5 >
+                    <Col >
+                <a href ="#"  style={{textDecoration:'none',color:'primary'}}   onClick = {this.togglemodal.bind(this)}>Edit</a>
+                
+                <a href ="#"  style={{textDecoration:'none',color:'primary',paddingRight:"2px"}} className ="offset-md-2"  >Delete</a>
                
+                </Col>
+                </h5>
+                </Row>
                 </CardText>
-                    <CardTitle><h1><a href ="comments" style= {{textDecoration:'none',color:'black'}}>{this.props.post.title}</a></h1></CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
+                
+                <CardTitle><h1><a href ="comments" style= {{textDecoration:'none',color:'black'}}>{this.props.post.title}</a></h1></CardTitle>
+                    
+                    <CardSubtitle><a href ="#" style= {{textDecoration:'none',color:'primary',fontStyle:'italic'}}>Author</a></CardSubtitle>
                     <CardText>{this.props.post.body}</CardText>
                 </CardBody>
               </Card>

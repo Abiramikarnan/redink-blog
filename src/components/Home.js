@@ -10,7 +10,7 @@ class Home extends React.Component{
     constructor(){
         super();
         this.state = {
-            posts: POSTS,
+            posts: [],
             modalIsopen : false
                
         };
@@ -22,7 +22,22 @@ class Home extends React.Component{
           }
       )
   }
+
+  componentDidMount()
+  {
+    let url = 'https://jsonplaceholder.typicode.com/posts'
+    fetch(url,{
+      method:'GET'
+ })
+.then((result)=>{
+result.json().then((resp)=>{
+  this.setState({posts:resp})
+})
+})
+}
+
     render(){
+        const posts = this.state.posts;
        // console.log(this.state.posts)
        
        let postcards = this.state.posts.map(post =>{

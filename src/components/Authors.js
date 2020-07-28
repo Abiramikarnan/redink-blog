@@ -10,14 +10,29 @@ class Author extends Component{
   constructor(){
     super();
     this.state = {
-        users: USERS
+        
+        data :[]
         };
       }
+      componentDidMount()
+      {
+        let url = 'https://jsonplaceholder.typicode.com/users'
+        fetch(url,{
+          method:'GET'
+     })
+  .then((result)=>{
+    result.json().then((resp)=>{
+      this.setState({data:resp})
+    })
+  })
+}
+
 
   render(){
+    const data = this.state.data;
+    //console.log(data);
 
-
-    let usercards = this.state.users.map(user =>{
+    let usercards = this.state.data.map(user =>{
       return(
        
        <Col className ="offset-md-3" md ="7"> 
