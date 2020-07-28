@@ -1,34 +1,35 @@
 import React from 'react';
-import {Router,Route,browserHistory} from 'react-router';
 import {Row,Col, Button} from 'reactstrap';
 import logo from './logo.svg';
 import Home from './components/Home.js';
 import Author from './components/Authors.js'
+import Login from './components/login.js';
+import Todos from './components/Todos.js';
+import About from './components/About.js';
+import Comments from './components/Comments.js';
+import{BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+
 
 
 class App extends React.Component{
   render(){
     return (
       <div>
-      <br/>
-      <Row style={{margin:'0px'}}>            
-          <Col  md={3}> 
-          <h4 className="blog"><a href="#" style={{textDecoration:'none',color:'blue',fontWeight:'bold'}}>BLOG</a></h4>
-          </Col>
-          <Col className="offset-md-2" md={2}>
-          <h5> <a href="#" style={{textDecoration:'none',color:'black'}}>Home</a></h5>
-          </Col>
-          <Col className="offset-md-3" md={1}>
-               <a href="#" style={{textDecoration:'none',color:'blue'}} >Authors</a>
-          </Col>
-          <Col md={1}>      
-              <a href="#" style={{textDecoration:'none',color:'red'}}>Logout</a>
-          </Col>
-      </Row>
+        <Router>
+        <div className="App">
+        <Switch>
+          
+          <Route exact path="/" component={Login}/>
+          <Route exact path="/home" component={Home}/>
+          <Route exact path="/author" component={Author}/>
+          <Route exact path="/todos" component={Todos}/>
+          <Route exact path="/about" component={About}/>
+          <Route exact path="/comments" component={Comments}/>
+          </Switch>
+        </div>
+    </Router>
       
-        
-        <Author/>
-        
+       
       
         </div>
         

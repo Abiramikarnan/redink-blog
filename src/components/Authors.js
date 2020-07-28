@@ -2,6 +2,7 @@ import React ,{Component} from 'react';
 import { Card, CardLink, CardBody,CardTitle,CardText} from 'reactstrap';
 import {Row,Col,Container} from 'reactstrap';
 import { USERS } from '../shared/users';
+import Header from './Header.js'
 
 import '../login.css'
 
@@ -25,8 +26,8 @@ class Author extends Component{
             <CardBody>
             <Row>
                 <CardTitle><h5>{user.id}.{user.name}</h5></CardTitle>
-                <CardLink className ="link" href="#">Todos</CardLink>
-                 <CardLink    href="#">About</CardLink>
+                <CardLink className ="link" href="todos">Todos</CardLink>
+                 <CardLink    href="about">About</CardLink>
                 
                 </Row>
                 
@@ -39,6 +40,7 @@ class Author extends Component{
   })
     return(
       <div>
+        <Header/>
         <br/>
         <Row className ="offset-md-3" md={3}>
         <h1 style={{color:'black',fontWeight:'bold',textDecoration:'underline'}}>Authors Lists</h1>

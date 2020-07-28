@@ -46,7 +46,8 @@ changeHandler = e => {
             this.setState({
               poppassword:false
             })
-            alert("Login successful");
+            
+            this.props.history.push('/home');
           }
           
         } 

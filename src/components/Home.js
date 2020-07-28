@@ -1,23 +1,25 @@
 import React from 'react';
-import {Row,Col, Button} from 'reactstrap';
-
+import {Row,Col, Button,Modal,ModalHeader,ModalBody,ModalFooter,Label,Form,FormGroup,Input} from 'reactstrap';
 import Cards from './cards';
 import '../Home.css'
 import { Container } from 'react-bootstrap';
 import { POSTS } from '../shared/posts.js';
+import Header from './Header.js'
 
 class Home extends React.Component{
     constructor(){
         super();
         this.state = {
             posts: POSTS,
-            
-            
+            modalIsopen : false
+               
         };
     }
-   displaypost(){
-      return(
-          alert('aii got it!!')
+  togglemodal(){
+      this.setState(
+          {
+             modalIsopen : ! this.state.modalIsopen
+          }
       )
   }
     render(){
@@ -35,10 +37,10 @@ class Home extends React.Component{
        
        return(
         <div>
-           
+           <Header/>
             <Row>
                 <Col className="offset-md-10" md ={2}>
-                 <Button outline color="success" onClick = {this.displaypost}>Add post</Button>
+                 <Button outline color="success" onClick = {this.togglemodal.bind(this)}>Add post</Button>
                 </Col>
             </Row>
             <Row>
@@ -46,7 +48,7 @@ class Home extends React.Component{
                     <h1 style={{color:'black',fontWeight:'bold',textDecoration:'underline'}}>Posts</h1>
                 </Col>
             </Row>
-        
+         
          <div>
              <Container fluid>
                  <Row>
@@ -55,6 +57,44 @@ class Home extends React.Component{
              </Container>
              
          </div>
+         
+            <Modal isOpen = {this.state.modalIsopen}>
+                <ModalHeader toggle = {this.togglemodal.bind(this)}><h3>Add Post</h3></ModalHeader>
+                <ModalBody>
+                <Form >
+                    <h5>
+                    <FormGroup>
+                        <Label for="title">Title</Label>
+                        <Input type="email" name="email" id="title" placeholder="Title" />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="user">User Name</Label>
+                        <Input type="select" name="select" id="user" placeholder="User Name">
+                        <option> Select User</option>
+                        <option> Leanne Graham</option>
+                        <option> Ervin Howell</option>
+                        <option>Clementine Bauch</option>
+                        <option>Patricia Lebsack</option>
+                        <option>Chelsey Dietrich</option>
+                        <option>Mrs. Dennis Schulist</option>
+                        <option>Kurtis Weissnat</option>
+                        <option>Glenna Reichert</option>
+                        <option>Nicholas Runolfsdottir V</option>
+                        <option>Clementina DuBuque</option>
+                        </Input>
+                     </FormGroup>
+                     <FormGroup>
+                        <Label for="content">Content</Label>
+                        <Input type="textarea" name="text" id="content" />
+                    </FormGroup>
+                    </h5>
+                </Form>
+                    </ModalBody>
+                <ModalFooter>
+                    <Button color = "primary">submit</Button>
+                </ModalFooter>
+                </Modal>
+
          </div>
          
          

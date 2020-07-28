@@ -14,7 +14,7 @@ class Cards extends React.Component{
              <Card className = "card"  variant ="outlined">
             
                 <CardBody>
-                    <CardTitle><h1>{this.props.post.title}</h1></CardTitle>
+                    <CardTitle><h1><a href ="comments" style= {{color:'black'}}>{this.props.post.title}</a></h1></CardTitle>
                     <CardSubtitle>Card subtitle</CardSubtitle>
                     <CardText>{this.props.post.body}</CardText>
                 </CardBody>
